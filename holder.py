@@ -48,13 +48,13 @@ async def holderbot(client: Client, message: Message) :
         if CHECK_STEP == "None" :
 
             if MESSAGE_TEXT == "/start" :
-                TEXT = "<b>Hello boss,I'm HolderBot (version 4.3.2)\n\nI am an open-source Telegram bot designed to provide unique and special features. All my commands are clear, but you can still refer to the <a href='https://github.com/erfjab/holderbot/wiki'>Wiki</a> for tutorials and guidance, open an <a href='https://github.com/erfjab/holderbot/issues'>issue</a> for bugs and suggestions, and join the <a href='https://t.me/ErfjabHolderbot'>channel</a> for important news.\n\nBy the way, boss, to enhance my capabilities, you can help my developer by forking the project on GitHub. Even if you're not familiar with coding, you can still contribute by <a href='https://github.com/erfjab/holderbot'>starring</a> the project. Either way, thank you.</b>"
+                TEXT = "Hi Dear, Its v2Ray Conroller By Armin."
                 await client.send_message(chat_id=MESSAGE_CHATID , text=TEXT , reply_markup=KEYBOARD_HOME , parse_mode=enums.ParseMode.HTML , disable_web_page_preview=True)
 
             elif MESSAGE_TEXT == "💬 Help" :
-                TEXT = "<b>Hello boss, It seems you've encountered an issue! Don't worry, first check the <a href='https://github.com/erfjab/holderbot/wiki'>Github Wiki</a> or <a href='https://t.me/ErfjabHolderbot'>Telegram channel</a>. If your problem persists, open an <a href='https://github.com/erfjab/holderbot/issues'>issue on Github</a> so that my developer can respond to you promptly.\n\nAdditionally, a file containing my logs has been sent to you, which my developer needs for debugging and resolving the issue. Thank you for your cooperation, boss.</b>"
+                TEXT = "If you have any question, please dont Ask!"
                 await client.send_message(chat_id=MESSAGE_CHATID , text=TEXT , reply_markup=KEYBOARD_HOME , parse_mode=enums.ParseMode.HTML , disable_web_page_preview=True)
-                await client.send_document(chat_id=MESSAGE_CHATID , document="nohup.out" , file_name="holderlogs.txt" , caption=f'<b>{datetime.now().strftime("%d/%m/%Y, %H:%M")}</b>' , parse_mode=enums.ParseMode.HTML )
+                #await client.send_document(chat_id=MESSAGE_CHATID , document="nohup.out" , file_name="holderlogs.txt" , caption=f'<b>{datetime.now().strftime("%d/%m/%Y, %H:%M")}</b>' , parse_mode=enums.ParseMode.HTML )
 
             elif MESSAGE_TEXT == "🖼 QR Code" :
                 TEXT = "<b>Please send your link.</b>"
@@ -104,7 +104,7 @@ async def holderbot(client: Client, message: Message) :
                 UPDATE_STEP = DEF_UPDATE_STEP(MESSAGE_CHATID,"create | wait to select command")
 
             elif MESSAGE_TEXT == "🎖 Notice" :
-                await client.send_message(chat_id=MESSAGE_CHATID , text=f"<b>Welcome to the Messages section! This feature has been added with sponsorship the <a href='https://t.me/GrayServer'>Gray</a> collection.❤️ You can visit the Gray collection channel and bot for purchasing servers on an hourly and monthly basis, with a wide variety of locations and specifications, accompanied by clean IPs at the lowest prices.\n\nTo utilize this feature, you first need to create an inbound according to the tutorial on GitHub Wiki or the Telegram channel tutorial for Holderbot. Then, in the host setting section of that inbound, write down the texts you desire to be displayed to the user upon completion of the configuration update.\n\nYour Messages is <code>{DEF_GET_MESSAGE_STATUS(MESSAGE_CHATID)}</code></b>" , reply_markup=KEYBOARD_MESSAGES , parse_mode=enums.ParseMode.HTML , disable_web_page_preview=True )
+                await client.send_message(chat_id=MESSAGE_CHATID , text=f"in the host setting section of that inbound, write down the texts you desire to be displayed to the user upon completion of the configuration update.\n\nYour Messages is <code>{DEF_GET_MESSAGE_STATUS(MESSAGE_CHATID)}</code></b>" , reply_markup=KEYBOARD_MESSAGES , parse_mode=enums.ParseMode.HTML , disable_web_page_preview=True )
                 UPDATE_STEP = DEF_UPDATE_STEP(MESSAGE_CHATID,"message | wait to select command")
                                 
             else :
