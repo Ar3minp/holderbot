@@ -89,6 +89,8 @@ sudo apt-get install sqlite3
 
 read -p "Please enter name (nickname) : " name
 read -p "Please enter telegram chatid : " chatid
+read -p "Please enter telegram chatid2 : " chatid2
+read -p "Please enter telegram chatid3 : " chatid3
 read -p "Please enter telegram bot token: " token
 read -p "Please enter panel sudo username : " user
 read -p "Please enter panel sudo password : " password
@@ -127,6 +129,8 @@ CREATE TABLE IF NOT EXISTS messages
 
 INSERT INTO messages (chatid, status) VALUES ('$chatid', 'off');
 INSERT INTO users (chatid, role, name, username, password, domain, step) VALUES ('$chatid', 'boss', '$name', '$user', '$password', '$domain', 'None');
+INSERT INTO users (chatid, role, name, username, password, domain, step) VALUES ('$chatid2', 'boss', '$name', '$user', '$password', '$domain', 'None');
+INSERT INTO users (chatid, role, name, username, password, domain, step) VALUES ('$chatid3', 'boss', '$name', '$user', '$password', '$domain', 'None');
 INSERT INTO monitoring (chatid, status, check_normal, check_error) VALUES ('$chatid', 'on', '10', '100');
 INSERT INTO bot (chatid, token) VALUES ("$chatid", "$token");
 EOF
