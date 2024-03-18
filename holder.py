@@ -406,7 +406,7 @@ async def holderbot(client: Client, message: Message) :
                                 USER_SUB = DEF_CREATE_USER(MESSAGE_CHATID , USERNAME , DATA , DATE , json.loads(PROXIES) , json.loads(INBOUNDS))
                                 if not "❌" in USER_SUB :
                                     QRCODE_IMG = DEF_CREATE_QRCODE(USER_SUB)
-                                    await client.send_photo(chat_id=MESSAGE_CHATID , photo=QRCODE_IMG,caption=f"<pre>{USER_SUB}</pre>" , reply_markup=KEYBOARD_HOME)
+                                    await client.send_photo(chat_id=MESSAGE_CHATID , photo=QRCODE_IMG,caption=f"<code>{USER_SUB}</code>" , reply_markup=KEYBOARD_HOME)
                                     await client.send_message(chat_id=MESSAGE_CHATID , text=f"<b>✅ <code>{USERNAME}</code> | {DATA} GB | {DATE} Days</b>" , reply_markup=KEYBOARD_HOME , parse_mode=enums.ParseMode.HTML)
                                     UPDATE_STEP = DEF_UPDATE_STEP(MESSAGE_CHATID,"None")
                                 else :
